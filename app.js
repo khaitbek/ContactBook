@@ -10,7 +10,6 @@ const cards = []
 userForm.addEventListener("submit", (evt) => {
     evt.preventDefault()
 
-    console.log("submit");
     // clear the cards
     cardsList.innerHTML = ""
 
@@ -29,10 +28,7 @@ userForm.addEventListener("submit", (evt) => {
 
 function renderCards(cards) {
     cards.forEach(card => {
-        console.log(document.querySelector("#cardTemplate"));
         const cardTemplate = document.querySelector("#cardTemplate").content.cloneNode(true).children[0]
-
-        console.log(card);
 
         // create a card
         cardTemplate.querySelector("#userFirstNameText").textContent = card.fName
