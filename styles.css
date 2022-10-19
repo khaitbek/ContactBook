@@ -1,0 +1,8 @@
+body{
+    font-family: "JetBrains Mono",monospace;
+}
+
+.card-list{
+    max-height: 500px;
+    overflow: auto;
+}
