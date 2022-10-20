@@ -30,6 +30,9 @@ userForm.addEventListener("submit", (evt) => {
     evt.preventDefault()
     // check user phone number
     if(!checkPhoneNumber(userPhoneInput.value)) return;
+    // check user inputs -> make sure the user doesn't enter an empty string
+    if(!isValidString(userFirstNameInput.value)) return triggerError("Please enter a valid name!");
+    // clear any error messages (alerts)
     clearErrorMessages();
     // add card to array
     cards.push({
@@ -42,6 +45,10 @@ userForm.addEventListener("submit", (evt) => {
     // clearInputs
     userForm.reset()
 })
+
+function isValidString(string){
+    return string.replaceAll(" ","").length > 0
+}
 
 function updateAndRenderCards(){
     clearCards()
